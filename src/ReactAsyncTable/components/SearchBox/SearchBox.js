@@ -45,14 +45,14 @@ class SearchBox extends React.Component {
 
   render() {
     const { searchTerm } = this.state;
-    const { placeholder } = this.props;
+    const { placeholder, enableAutoFocus } = this.props;
 
     return (
       <div className="input-group">
         <input
           type="text"
           className="form-control"
-          autoFocus
+          autoFocus={enableAutoFocus}
           name="search"
           value={searchTerm}
           placeholder={placeholder}

@@ -63,7 +63,8 @@ const propTypes = {
   onHeaderAction: PropTypes.func,
   onAction: PropTypes.func,
   onColumnClick: PropTypes.func,
-  onMultipleDelete: PropTypes.func
+  onMultipleDelete: PropTypes.func,
+  enableAutoFocus: PropTypes.bool
 };
 
 const defaultProps = {
@@ -96,7 +97,8 @@ const defaultProps = {
   onMultipleDelete: onMultipleDelete,
   onHeaderAction: onHeaderAction,
   onAction: onAction,
-  onColumnClick: onColumnClick
+  onColumnClick: onColumnClick,
+  enableAutoFocus: false
 };
 
 const defaultOptions = {
@@ -310,7 +312,7 @@ class ReactAsyncTable extends Component {
       selectedItems,
       expandRow
     } = this.state;
-    const { displayHeaderSection, splitView, delay, onSearch } = this.props;
+    const { displayHeaderSection, splitView, delay, onSearch, enableAutoFocus } = this.props;
 
     // Set default values to options/translations/icons props
     const options = {
@@ -350,6 +352,7 @@ class ReactAsyncTable extends Component {
             translations={translations}
             icons={icons}
             onMultipleDelete={this.onMultipleDelete}
+            enableAutoFocus={enableAutoFocus}
           />
         </ConditionalWrapper>
         <ConditionalWrapper

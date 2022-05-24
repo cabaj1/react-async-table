@@ -43,7 +43,8 @@ const HeaderSection = props => {
     toggleGridView,
     onInsert,
     onHeaderAction,
-    onMultipleDelete
+    onMultipleDelete,
+    enableAutoFocus
   } = props;
   const {
     searchPlaceholder,
@@ -66,6 +67,7 @@ const HeaderSection = props => {
                 placeholder={searchPlaceholder}
                 activeTabID={activeTabID}
                 onChange={debounceSearch}
+                enableAutoFocus={enableAutoFocus}
               />
             )}
           </div>
